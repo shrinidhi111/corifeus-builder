@@ -1,0 +1,9 @@
+{
+  "one": 1,
+  "one-2": 2,
+  "cool": [1, 2,3],
+  "weird": {
+    "cool": "cool",
+    "not-cool": "bad"
+  }
+}

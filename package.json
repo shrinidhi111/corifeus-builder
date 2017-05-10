@@ -1,0 +1,62 @@
+{
+    "name": "corifeus-builder",
+    "version": "1.7.504-501",
+    "corifeus": {
+        "time": "5/6/2017, 5:02:36 PM",
+        "icon": "fa fa-gavel",
+        "time-stamp": 1494082956181,
+        "code": "Make",
+        "publish": true
+    },
+    "description": "Corifeus Builder - Make",
+    "main": "src/index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "grunt",
+        "coverage": "istanbul cover node_modules/mocha/bin/_mocha --report clover -- -R spec test/mocha/**/*.js",
+        "ng-start": "webpack-dev-server --inline --progress --port 8080",
+        "ng-test": "karma start",
+        "ng-build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/patrikx3/corifeus-builder.git"
+    },
+    "keywords": [
+        "corifeus",
+        "builder"
+    ],
+    "author": "Patrik Laszlo <alabard@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/patrikx3/corifeus-builder/issues"
+    },
+    "homepage": "https://pages.corifeus.tk/corifeus-builder",
+    "dependencies": {
+        "corifeus-utils": "^1.1.100-140",
+        "fs-extra": "^3.0.1",
+        "grunt": "^1.0.1",
+        "grunt-contrib-clean": "^1.1.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-jshint": "^1.1.0",
+        "grunt-contrib-watch": "^1.0.0",
+        "grunt-mocha-istanbul": "^5.0.2",
+        "grunt-mocha-test": "^0.13.2",
+        "istanbul": "^1.1.0-alpha.1",
+        "jit-grunt": "^0.10.0",
+        "mocha": "^3.3.0",
+        "mz": "^2.6.0",
+        "should": "^11.2.1",
+        "time-grunt": "^1.4.0"
+    },
+    "dependencies-removed": {
+        "grunt-jsdoc": "^2.1.0",
+        "ink-docstrap": "^1.3.0"
+    },
+    "devDependencies": {},
+    "engines": {
+        "node": ">=7.8.0"
+    }
+}
