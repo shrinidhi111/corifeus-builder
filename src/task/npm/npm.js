@@ -46,13 +46,8 @@ module.exports = (pkgFile) => {
 
         pkg.engines = { "node" : ">=7.8.0" };
 
-        if (pkg.name.startsWith('corifeus')) {
-            pkg.homepage = `https://pages.corifeus.tk/${repo}`;
-        }
+        pkg.homepage = `https://pages.corifeus.tk/${repo}`;
 
-        const now = new Date();
-        pkg.corifeus.time = now.toLocaleString();
-        pkg.corifeus['time-stamp'] = now.getTime();
         const newPkgFile = JSON.stringify(pkg, null, 4);
         return fs.writeFile(pkgFile, newPkgFile).then((result) => pkg);
     });

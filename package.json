@@ -1,10 +1,8 @@
 {
     "name": "corifeus-builder",
-    "version": "1.7.504-501",
+    "version": "1.7.552-27",
     "corifeus": {
-        "time": "5/6/2017, 5:02:36 PM",
         "icon": "fa fa-gavel",
-        "time-stamp": 1494082956181,
         "code": "Make",
         "publish": true
     },
@@ -35,7 +33,7 @@
     },
     "homepage": "https://pages.corifeus.tk/corifeus-builder",
     "dependencies": {
-        "corifeus-utils": "^1.1.100-140",
+        "corifeus-utils": "^1.1.134-24",
         "fs-extra": "^3.0.1",
         "grunt": "^1.0.1",
         "grunt-contrib-clean": "^1.1.0",
