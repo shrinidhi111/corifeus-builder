@@ -188,7 +188,7 @@ Until it works for await/async, removed from **JSDoc**.
 [//]: #@corifeus-footer
 
 ---
-[**CORIFEUS-BUILDER**](https://pages.corifeus.tk/corifeus-builder) Build v1.7.605-49
+[**CORIFEUS-BUILDER**](https://pages.corifeus.tk/corifeus-builder) Build v1.7.606-50
 
 [Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
 
