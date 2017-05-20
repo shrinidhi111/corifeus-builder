@@ -1,23 +1,36 @@
 [//]: #@corifeus-header
 
-
+ [![Build Status](https://travis-ci.org/patrikx3/corifeus-builder.svg?branch=master)](https://travis-ci.org/patrikx3/corifeus-builder)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/?branch=master)  
+  
+[![NPM](https://nodei.co/npm/corifeus-builder.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/corifeus-builder/)
+---
 # Corifeus Builder - Make
+
+## Issues / Support
+This is an open source project. Time is a precious thing, so I have rarely time to give support and fix issues for someone else. I fix a bug, when I have an error that I need. If you got an issue, error or bug, I hope someone will have time to do it for you, otherwise, you are on your own.
+
+Though, if I know the solution, I will tell you. Besides, core errors will be fixed by me.
+
+***If you want to extend, fix bugs or add in new features, I promptly merge pull requests or you can become a ```patrikx3``` member.***
 
 ### Node Version Requirement 
 ``` 
 >=7.8.0 
 ```  
    
+### Built on Node 
+``` 
+v7.10.0
+```   
+   
 The ```async``` and ```await``` keywords are required.
 
 Install NodeJs:    
 https://nodejs.org/en/download/package-manager/    
   
-# Description
+# Description  
 
-
----
-
+                        
 [//]: #@corifeus-header:end
 
 
@@ -59,10 +72,14 @@ Name is based on the ```git``` repo name, plus a prefix, so all generated. (Was 
 ```
 
 ## Example output
-```bash
-patrikx3@workstation:~/Projects/patrikx3/corifeus/corifeus-builder$ grunt
+```text
+patrikx3@workstation ~/ramdisk/persistence/content/.p3x-ramdisk-link/Projects/patrikx3/corifeus/corifeus-builder $ grunt
 Running "generate-folder" task
 
+Running "cory-generate-tasks" task
+
+Running "cory-ensure-protractor" task
+Protractor is not on the path
 Running "cory-npm" task
 
 Running "clean:cory-build" (clean) task
@@ -75,9 +92,9 @@ Running "mocha_istanbul:cory-coverage" (mocha_istanbul) task
     ✓ main (752ms)
 
   src/git
-commit: 237
+commit: 35
 branch: master
-date: 1488495683
+date: 1495185080
 repo: corifeus-builder
     ✓ branch / data / commit / repo
 
@@ -87,86 +104,78 @@ repo: corifeus-builder
   src/task/npm/exec
 new name: corifeus-builder
 old name: corifeus-builder
-new version: 1.0.238-188
-old version: 1.0.238-187
+new version: 1.7.572-36
+old version: 1.7.571-36
     ✓ default
 
   src/task/replace
     ✓ default
 
 
-  5 passing (796ms)
+  5 passing (832ms)
 
----------------------------|----------|----------|----------|----------|----------------|
-File                       |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
----------------------------|----------|----------|----------|----------|----------------|
-All files                  |    65.54 |    39.71 |    40.91 |    65.07 |                |
- src                       |    45.83 |    11.11 |       40 |    42.22 |                |
-  Loader.js                |    16.13 |        0 |        0 |    16.13 |... 65,72,79,81 |
-  git.js                   |      100 |       50 |      100 |      100 |                |
-  auth-session.js                 |      100 |      100 |      100 |      100 |                |
- src/config                |      100 |      100 |      100 |      100 |                |
-  auth-session.js                 |      100 |      100 |      100 |      100 |                |
- src/config/folder         |      100 |      100 |      100 |      100 |                |
-  auth-session.js                 |      100 |      100 |      100 |      100 |                |
- src/config/grunt          |      100 |      100 |      100 |      100 |                |
-  auth-session.js                 |      100 |      100 |      100 |      100 |                |
- src/config/grunt/angular2 |    38.89 |        0 |        0 |    38.89 |                |
-  auth-session.js                 |    38.89 |        0 |        0 |    38.89 |... 5,98,99,102 |
- src/config/grunt/js       |      100 |      100 |      100 |      100 |                |
-  auth-session.js                 |      100 |      100 |      100 |      100 |                |
- src/config/karma          |      100 |      100 |      100 |      100 |                |
-  auth-session.js                 |      100 |      100 |      100 |      100 |                |
- src/config/karma/angular2 |    30.43 |       50 |        0 |    30.43 |                |
-  config.js                |    66.67 |      100 |        0 |    66.67 |           6,43 |
-  shim.js                  |    17.65 |       50 |      100 |    17.65 |... 18,21,22,24 |
- src/config/protractor     |      100 |      100 |      100 |      100 |                |
-  angular2.js              |      100 |      100 |      100 |      100 |                |
- src/config/task           |       80 |       50 |      100 |       80 |                |
-  auth-session.js                 |       80 |       50 |      100 |       80 |       14,15,18 |
- src/config/webpack        |    85.29 |        0 |        0 |    85.29 |                |
-  common.js                |    88.89 |        0 |        0 |    88.89 |             15 |
-  dev.js                   |       75 |        0 |        0 |       75 |          11,13 |
-  auth-session.js                 |      100 |      100 |      100 |      100 |                |
-  prod.js                  |       80 |        0 |        0 |       80 |          14,16 |
-  test.js                  |      100 |      100 |      100 |      100 |                |
- src/task                  |       50 |      100 |        0 |       50 |                |
-  auth-session.js                 |      100 |      100 |      100 |      100 |                |
-  noop.js                  |    33.33 |      100 |        0 |    33.33 |            2,3 |
- src/task/json2scss        |    80.49 |       75 |     62.5 |    80.49 |                |
-  index.js                  |    93.94 |    85.71 |      100 |    93.94 |          16,32 |
-  auth-session.js                 |       25 |        0 |        0 |       25 |  4,6,7,8,10,11 |
- src/task/npm              |    72.97 |       60 |       50 |    72.22 |                |
-  index.js                  |    86.21 |       60 |      100 |    85.71 |    20,21,31,40 |
-  auth-session.js                 |       25 |      100 |        0 |       25 |   4,5,6,7,8,10 |
- src/task/replace          |    55.32 |       25 |       40 |    55.32 |                |
-  index.js                  |    61.54 |    27.78 |    57.14 |    61.54 |... 81,83,84,88 |
-  auth-session.js                 |       25 |        0 |        0 |       25 |  5,7,8,9,11,12 |
----------------------------|----------|----------|----------|----------|----------------|
+-----------------------|----------|----------|----------|----------|----------------|
+File                   |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+-----------------------|----------|----------|----------|----------|----------------|
+All files              |    52.87 |    28.26 |    31.48 |    52.48 |                |
+ src                   |    29.11 |     2.78 |    33.33 |    26.67 |                |
+  git.js               |      100 |       50 |      100 |      100 |             10 |
+  index.js             |      100 |      100 |      100 |      100 |                |
+  loader.js            |      8.2 |        0 |        0 |     8.33 |... 221,225,226 |
+ src/config            |    71.43 |      100 |        0 |    71.43 |                |
+  index.js             |    71.43 |      100 |        0 |    71.43 |            5,6 |
+ src/config/folder     |      100 |      100 |      100 |      100 |                |
+  index.js             |      100 |      100 |      100 |      100 |                |
+ src/config/grunt      |      100 |      100 |      100 |      100 |                |
+  index.js             |      100 |      100 |      100 |      100 |                |
+ src/config/grunt/js   |       60 |      100 |        0 |       60 |                |
+  index.js             |       60 |      100 |        0 |       60 |          6,101 |
+ src/config/grunt/ts   |    46.15 |      100 |        0 |    46.15 |                |
+  index.js             |    46.15 |      100 |        0 |    46.15 |... 24,46,48,63 |
+ src/config/task       |    88.46 |       50 |      100 |    88.46 |                |
+  index.js             |    88.46 |       50 |      100 |    88.46 |       46,47,50 |
+ src/task              |    18.42 |        0 |        0 |    18.42 |                |
+  ensure-protractor.js |    16.67 |        0 |        0 |    16.67 |... 26,28,30,31 |
+  generate-tasks.js    |     12.5 |        0 |        0 |     12.5 |... 19,20,24,34 |
+  index.js             |      100 |      100 |      100 |      100 |                |
+  noop.js              |    33.33 |      100 |        0 |    33.33 |            2,3 |
+ src/task/inject       |    22.73 |        0 |        0 |    22.73 |                |
+  index.js             |       25 |        0 |        0 |       25 |   4,5,6,7,9,10 |
+  inject.js            |    22.22 |        0 |        0 |    22.22 |... 47,48,49,51 |
+ src/task/json2scss    |    80.49 |       75 |     62.5 |    80.49 |                |
+  index.js             |       25 |        0 |        0 |       25 |  4,6,7,8,10,11 |
+  json2scss.js         |    93.94 |    85.71 |      100 |    93.94 |          16,32 |
+ src/task/npm          |    73.68 |       60 |       50 |    72.97 |                |
+  index.js             |       25 |      100 |        0 |       25 |   4,5,6,7,8,10 |
+  npm.js               |    86.67 |       60 |      100 |    86.21 |    20,21,33,41 |
+ src/task/replace      |    71.05 |     62.5 |       40 |    71.05 |                |
+  index.js             |       25 |        0 |        0 |       25 |  5,7,8,9,11,12 |
+  replace.js           |    83.33 |    83.33 |    57.14 |    83.33 | 65,67,69,70,74 |
+-----------------------|----------|----------|----------|----------|----------------|
 
 =============================== Coverage summary ===============================
-Statements   : 65.54% ( 194/296 )
-Branches     : 39.71% ( 27/68 )
-Functions    : 40.91% ( 18/44 )
-Lines        : 65.07% ( 190/292 )
+Statements   : 52.87% ( 184/348 )
+Branches     : 28.26% ( 26/92 )
+Functions    : 31.48% ( 17/54 )
+Lines        : 52.48% ( 180/343 )
 ================================================================================
 >> Done. Check coverage folder.
 
 Running "cory-replace" task
- Replaced: artifacts/readme/builds/folders.md, Pre:  #@corifeus-header, Post:  #corifeus-header:end
- Replaced: artifacts/readme/builds/tasks.md, Pre:  #@corifeus-header, Post:  #corifeus-header:end
- Replaced: README.md, Pre:  #@corifeus-header, Post:  #corifeus-header:end
- Replaced: artifacts/readme/builds/folders.md, Pre:  #@corifeus-footer, Post:  #@corifeus-footer:end
- Replaced: artifacts/readme/builds/tasks.md, Pre:  #@corifeus-footer, Post:  #@corifeus-footer:end
- Replaced: README.md, Pre:  #@corifeus-footer, Post:  #@corifeus-footer:end
-
+Replaced: artifacts/readme/builds/folders.md, Pre:  #@corifeus-header, Post:  #@corifeus-header:end
+Replaced: artifacts/readme/builds/tasks.md, Pre:  #@corifeus-header, Post:  #@corifeus-header:end
+Replaced: README.md, Pre:  #@corifeus-header, Post:  #@corifeus-header:end
+Replaced: artifacts/readme/builds/folders.md, Pre:  #@corifeus-footer, Post:  #@corifeus-footer:end
+Replaced: artifacts/readme/builds/tasks.md, Pre:  #@corifeus-footer, Post:  #@corifeus-footer:end
+Replaced: README.md, Pre:  #@corifeus-footer, Post:  #@corifeus-footer:end
 
 Done.
 
 
-Execution Time (2017-03-03 12:31:03 UTC+1)
-mocha_istanbul:cory-coverage  6s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 99%
-Total 6.1s
+Execution Time (2017-05-19 11:41:05 UTC+2)
+mocha_istanbul:cory-coverage  2.1s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 97%
+Total 2.1s
+
 
 
 ```
@@ -179,9 +188,8 @@ Until it works for await/async, removed from **JSDoc**.
 [//]: #@corifeus-footer
 
 ---
-[**CORIFEUS-BUILDER**](https://pages.corifeus.tk/corifeus-builder) Build v1.7.545-25
+[**CORIFEUS-BUILDER**](https://pages.corifeus.tk/corifeus-builder) Build v1.7.602-46
 
 [Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
- 
 
 [//]: #@corifeus-footer:end

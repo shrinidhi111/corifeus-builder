@@ -41,35 +41,42 @@ class loader {
         } else if (options.replacer.hasOwnProperty('type')) {
             replacer = options.replacer.type;
         }
-        const nodeVersion = `
-# \${pkg.description}
+        const nodeVersion = `# \${pkg.description}
+
+## Issues / Support
+This is an open source project. Time is a precious thing, so I have rarely time to give support and fix issues for someone else. I fix a bug, when I have an error that I need. If you got an issue, error or bug, I hope someone will have time to do it for you, otherwise, you are on your own.
+
+Though, if I know the solution, I will tell you. Besides, core errors will be fixed by me.
+
+***If you want to extend, fix bugs or add in new features, I promptly merge pull requests or you can become a \`\`\`patrikx3\`\`\` member.***
 
 ### Node Version Requirement 
 \`\`\` 
 \${pkg.engines.node} 
 \`\`\`  
    
+### Built on Node 
+\`\`\` 
+${process.version}
+\`\`\`   
+   
 The \`\`\`async\`\`\` and \`\`\`await\`\`\` keywords are required.
 
 Install NodeJs:    
 https://nodejs.org/en/download/package-manager/    
   
-# Description
-
+# Description  
 `
         switch(replacer) {
             case 'corifeus':
                 options.config['cory-replace'] = {
                     header: {
                         header: true,
-/*
- [![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Trello](https://img.shields.io/badge/Trello-Corifeus-026aa7.svg)](https://trello.com/b/3NArfcD1/corifeus)
-*/
-
                         replace: `
-${nodeVersion}
+ [![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  
 ---
-`,
+${nodeVersion}
+                        `,
                         files: [
                             'artifacts/**/*.md',
                             '*.md',
@@ -85,7 +92,6 @@ ${nodeVersion}
 [**\${pkg.name.toUpperCase()}**](https://pages.corifeus.tk/\${git.repo}) Build v\${pkg.version}
 
 [Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
- 
 `,
                         files: [
                             'artifacts/**/*.md',
@@ -101,20 +107,23 @@ ${nodeVersion}
             case 'p3x':
                 let nonEmptyP3x = '';
                 if (!options.empty) {
-                    nonEmptyP3x = `[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)`
+                    nonEmptyP3x = `[![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master) 
+
+---
+`
                 }
 
                 options.config['cory-replace'] = {
                     header: {
                         header: true,
-/*
- [![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  ${nonEmptyP3x}  [![Trello](https://img.shields.io/badge/Trello-p3x-026aa7.svg)](https://trello.com/b/gqKHzZGy/p3x)
+/*  [![Trello](https://img.shields.io/badge/Trello-p3x-026aa7.svg)](https://trello.com/b/gqKHzZGy/p3x)
  */
 
                         replace: `
+  ${nonEmptyP3x}
+ 
 ${nodeVersion}
----
-`,
+                        `,
                         files: [
                             '*.md'
                         ]
@@ -143,16 +152,16 @@ ${nodeVersion}
                 throw new Error(`unknown replacer ${options.replacer}`)
         }
 
-        /*
         if (options.replacer.hasOwnProperty('npmio') && options.replacer.npmio === true) {
             const replace = options.config['cory-replace'].header.replace;
 
             const append = replace.substring(replace.indexOf('---'));
+
             options.config['cory-replace'].header.replace = replace.substring(0, replace.indexOf('---')) + `  
 [![NPM](https://nodei.co/npm/\${pkg.name}.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/\${pkg.name}/)
----` + append
+` + append
         }
-        */
+
         grunt.config.merge(config);
         Object.keys(task).forEach((taskItem) => task[taskItem](grunt))
 
