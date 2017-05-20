@@ -132,7 +132,7 @@ ${nodeVersion}
                         footer: true,
                         replace: `
 ---
-[**\${pkg.name.toUpperCase()}**](https://patrikx3.github.com/\${git.repo}) Build v\${pkg.version}
+[**\${pkg.name.toUpperCase()}**](https://pages.corifeus.tk/\${git.repo}) Build v\${pkg.version}
 
 [Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
 
