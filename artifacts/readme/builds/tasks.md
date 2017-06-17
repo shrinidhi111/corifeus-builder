@@ -22,7 +22,7 @@ Besides, when I can support, please note, I cannot support old versions, only th
    
 ### Built on Node 
 ``` 
-v8.1.0
+v8.1.2
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -69,7 +69,7 @@ watch:cory-wait
 [//]: #@corifeus-footer
 
 ---
-[**CORIFEUS-BUILDER**](https://pages.corifeus.tk/corifeus-builder) Build v1.7.660-16
+[**CORIFEUS-BUILDER**](https://pages.corifeus.tk/corifeus-builder) Build v1.7.662-20
 
 [Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
 
