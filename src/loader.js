@@ -41,6 +41,43 @@ class loader {
         } else if (options.replacer.hasOwnProperty('type')) {
             replacer = options.replacer.type;
         }
+
+        const defaultHeader = {
+            header: true,
+            replace: `
+## \${pkg.description}
+
+---
+                        `,
+            files: [
+                'artifacts/**/*.md',
+                '*.md',
+                '!node_modules',
+                '!build',
+                '!LICENSE.md',
+                '!readme.md',
+                '!README.md',
+            ]
+        }
+
+        const defaultFooter =  {
+            footer: true,
+            replace: `
+---
+
+[**\${pkg.name.toUpperCase()}**](https://pages.corifeus.tk/\${git.repo}) Build v\${pkg.version}
+
+[Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
+`,
+            files: [
+                'artifacts/**/*.md',
+                '*.md',
+                '!node_modules',
+                '!build',
+                '!LICENSE.md',
+            ]
+        };
+
         const nodeVersion = `# \${pkg.description}
 
 This is an open source project. Just code.
@@ -65,7 +102,7 @@ https://nodejs.org/en/download/package-manager/
         switch(replacer) {
             case 'corifeus':
                 options.config['cory-replace'] = {
-                    header: {
+                    headerMain: {
                         header: true,
                         replace: `
  [![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  
@@ -73,29 +110,12 @@ https://nodejs.org/en/download/package-manager/
 ${nodeVersion}
                         `,
                         files: [
-                            'artifacts/**/*.md',
-                            '*.md',
-                            '!node_modules',
-                            '!build',
-                            '!LICENSE.md',
+                            'readme.md',
+                            'README.md',
                         ]
                     },
-                    footer: {
-                        footer: true,
-                        replace: `
----
-[**\${pkg.name.toUpperCase()}**](https://pages.corifeus.tk/\${git.repo}) Build v\${pkg.version}
-
-[Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
-`,
-                        files: [
-                            'artifacts/**/*.md',
-                            '*.md',
-                            '!node_modules',
-                            '!build',
-                            '!LICENSE.md',
-                        ]
-                    }
+                    header: defaultHeader,
+                    footer: defaultFooter
                 }
                 break;
 
@@ -109,7 +129,7 @@ ${nodeVersion}
                 }
 
                 options.config['cory-replace'] = {
-                    header: {
+                    headerMain: {
                         header: true,
 /*  [![Trello](https://img.shields.io/badge/Trello-p3x-026aa7.svg)](https://trello.com/b/gqKHzZGy/p3x)
  */
@@ -120,39 +140,42 @@ ${nodeVersion}
 ${nodeVersion}
                         `,
                         files: [
-                            '*.md'
+                            'readme.md',
+                            'README.md',
                         ]
                     },
-                    footer: {
-                        footer: true,
-                        replace: `
----
-[**\${pkg.name.toUpperCase()}**](https://pages.corifeus.tk/\${git.repo}) Build v\${pkg.version}
-
-[Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
-
-`,
-                        files: [
-                            'artifacts/**/*.md',
-                            '*.md',
-                            '!node_modules',
-                            '!build',
-                            '!LICENSE.md',
-                        ]
-                    }
+                    header: defaultHeader,
+                    footer: defaultFooter
                 };
+                break;
+
+            case 'home':
+                options.config['cory-replace'] = {
+                    header: {
+                        header: true,
+                        replace: `
+## \${pkg.description}
+---
+                        `,
+                        files: [
+                            'readme.md',
+                            'README.md',
+                        ]
+                    },
+                    footer: defaultFooter,
+                }
                 break;
 
             default:
                 throw new Error(`unknown replacer ${options.replacer}`)
         }
 
-        if (options.replacer.hasOwnProperty('npmio') && options.replacer.npmio === true) {
-            const replace = options.config['cory-replace'].header.replace;
+        if (options.replacer.hasOwnProperty('npmio') && options.replacer.npmio === true && options.config['cory-replace'].hasOwnProperty('headerMain')) {
+            const replace = options.config['cory-replace'].headerMain.replace;
 
             const append = replace.substring(replace.indexOf('---'));
 
-            options.config['cory-replace'].header.replace = replace.substring(0, replace.indexOf('---')) + `  
+            options.config['cory-replace'].headerMain.replace = replace.substring(0, replace.indexOf('---')) + `  
 [![NPM](https://nodei.co/npm/\${pkg.name}.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/\${pkg.name}/)
 ` + append
         }
