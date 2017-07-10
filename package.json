@@ -1,6 +1,6 @@
 {
     "name": "corifeus-builder",
-    "version": "1.7.685-33",
+    "version": "1.7.700-39",
     "corifeus": {
         "icon": "fa fa-gavel",
         "code": "Make",
@@ -31,9 +31,9 @@
     "bugs": {
         "url": "https://github.com/patrikx3/corifeus-builder/issues"
     },
-    "homepage": "https://pages.corifeus.tk/corifeus-builder",
+    "homepage": "https://pages.corifeus.com/corifeus-builder",
     "dependencies": {
-        "corifeus-utils": "^1.1.346-40",
+        "corifeus-utils": "^1.1.359-54",
         "fs-extra": "^3.0.1",
         "grunt": "^1.0.1",
         "grunt-contrib-clean": "^1.1.0",

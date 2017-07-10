@@ -65,9 +65,9 @@ class loader {
             replace: `
 ---
 
-[**\${pkg.name.toUpperCase()}**](https://pages.corifeus.tk/\${git.repo}) Build v\${pkg.version}
+[**\${pkg.name.toUpperCase()}**](https://pages.corifeus.com/\${git.repo}) Build v\${pkg.version}
 
-[Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
+[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 `,
             files: [
                 'artifacts/**/*.md',
