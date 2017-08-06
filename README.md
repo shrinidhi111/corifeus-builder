@@ -1,6 +1,7 @@
 [//]: #@corifeus-header
 
  [![Build Status](https://travis-ci.org/patrikx3/corifeus-builder.svg?branch=master)](https://travis-ci.org/patrikx3/corifeus-builder)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/?branch=master)  
+ 
   
 [![NPM](https://nodei.co/npm/corifeus-builder.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/corifeus-builder/)
 ---
@@ -185,7 +186,7 @@ Until it works for await/async, removed from **JSDoc**.
 
 ---
 
-[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.7.715-54
+[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.7.728-75
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
