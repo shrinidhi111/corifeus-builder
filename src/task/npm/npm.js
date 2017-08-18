@@ -48,6 +48,8 @@ module.exports = (pkgFile) => {
 
         pkg.homepage = `https://pages.corifeus.com/${repo}`;
 
+        pkg.corifeus.nodejs = process.version
+
         const newPkgFile = JSON.stringify(pkg, null, 4);
         return fs.writeFile(pkgFile, newPkgFile).then((result) => pkg);
     });
