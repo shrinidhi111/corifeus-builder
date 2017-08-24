@@ -186,7 +186,7 @@ Until it works for await/async, removed from **JSDoc**.
 
 ---
 
-[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.7.773-105
+[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.7.776-106
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
