@@ -30,7 +30,7 @@ test/mocha/
 
 ---
 
-[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.7.786-110
+[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.7.789-112
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
