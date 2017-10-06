@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
- [![Build Status](https://travis-ci.org/patrikx3/corifeus-builder.svg?branch=master)](https://travis-ci.org/patrikx3/corifeus-builder)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/corifeus-builder/?branch=master)  
+ [![Build Status](https://travis-ci.org/patrikx3/.svg?branch=master)](https://travis-ci.org/patrikx3/)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3//badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3//?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3//badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3//?branch=master)  
  
   
 [![NPM](https://nodei.co/npm/corifeus-builder.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/corifeus-builder/)

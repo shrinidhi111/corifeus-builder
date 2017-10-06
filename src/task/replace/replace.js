@@ -17,40 +17,40 @@ const replaces = {
     }
 }
 
-module.exports = (grunt, inConfig, done) => {
+module.exports = async (grunt, inConfig, done) => {
 
-    const config = Object.assign({}, inConfig);
+    try {
+        const config = Object.assign({}, inConfig);
 
-    ['header', 'footer'].forEach((type) => {
-        if (config.hasOwnProperty(type) && config[type]) {
-            ['prefix', 'postfix'].forEach((fix) => {
-                if (!config.hasOwnProperty(fix)) {
-                    config[fix] = replaces[type][fix];
-                }
-            })
-        } else {
-            config[type] = false;
-        }
-    })
+        ['header', 'footer'].forEach((type) => {
+            if (config.hasOwnProperty(type) && config[type]) {
+                ['prefix', 'postfix'].forEach((fix) => {
+                    if (!config.hasOwnProperty(fix)) {
+                        config[fix] = replaces[type][fix];
+                    }
+                })
+            } else {
+                config[type] = false;
+            }
+        })
 
 //    console.log(config);
 
-    const files = grunt.file.expand(config.files);
+        const files = grunt.file.expand(config.files);
 //    console.log(files);
-    const gitData = {
-        branch: undefined,
-        date: undefined,
-        commit: undefined,
-        repo: undefined
-    };
+        const gitData = {
+            branch: undefined,
+            date: undefined,
+            commit: undefined,
+            repo: undefined
+        };
 
-    Promise.all([
-        git.branch,
-        git.date,
-        git.commit,
-        git.repo
-    ])
-    .then( (result) => {
+        const result = Promise.all([
+            git.branch,
+            git.date,
+            git.commit,
+            git.repo
+        ])
         gitData.branch = result[0];
         gitData.date = result[1];
         gitData.commit = result[2];
@@ -62,7 +62,7 @@ module.exports = (grunt, inConfig, done) => {
         });
 
         files
-            .map( (file) => fs.readFileSync(file).toString() )
+            .map((file) => fs.readFileSync(file).toString())
             .forEach((data, index) => {
                 data = utils.string.inject(data, config);
 
@@ -70,7 +70,8 @@ module.exports = (grunt, inConfig, done) => {
                 fs.writeFileSync(files[index], data);
             })
         done();
-    })
-    .catch( (error)  => done(error) );
+    } catch (error) {
+        done(error);
+    }
 
 };

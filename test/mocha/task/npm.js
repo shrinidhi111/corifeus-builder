@@ -5,9 +5,8 @@ const fs = require('mz/fs');
 const process = require('process');
 const path = require('path');
 
-describe('src/task/npm/exec', () => {
-    it('default', (done) => {
-
+describe('src/task/npm/exec', async () => {
+    it('default', async () => {
         const fileName = path.resolve(`${process.cwd()}/package.json`);
 
         let originalData;
@@ -18,23 +17,22 @@ describe('src/task/npm/exec', () => {
             commit: undefined,
             repo: undefined
         };
-        Promise.all([
-            fs.readFile('package.json'),
-            git.branch,
-            git.date,
-            git.commit,
-            git.repo
-        ])
-        .then((result) => {
+
+        try {
+            const result = await Promise.all([
+                fs.readFile(fileName),
+                git.branch,
+                git.date,
+                git.commit,
+                git.repo
+            ])
             originalData = result[0].toString();
             originalJson = JSON.parse(originalData);
             gitData.branch = result[1];
             gitData.date = result[2];
             gitData.commit = result[3];
             gitData.repo = result[4];
-        }).then(() => {
-            return exec(fileName);
-        }).then((newJson) => {
+            const newJson = await exec(fileName);
             console.log(`new name: ${newJson.name}`);
             console.log(`old name: ${originalJson.name}`);
             originalJson.name.should.be.equal(newJson.name);
@@ -42,23 +40,12 @@ describe('src/task/npm/exec', () => {
             console.log(`new version: ${newJson.version}`);
             console.log(`old version: ${originalJson.version}`);
             newJson.version.should.not.equal(originalJson.version);
-            return null;
-        }).then(() => {
-            return fs.writeFile(fileName, originalData);
-        }).then(() => {
-            return fs.readFile(fileName);
-        })
-            .then((data) => {
+            await fs.writeFile(fileName, originalData);
+            const data = await fs.readFile(fileName);
             originalData.should.be.equal(data.toString());
-            done();
-        })
-        .catch((error) => {
-            fs.writeFile(fileName, originalData).then(() => {
-                done(error)
-            }).catch((error2) => {
-                done([error, error2]);
-            });
-        })
-
+        } catch (error) {
+            await fs.writeFile(fileName, originalData)
+            throw error;
+        }
     });
 });

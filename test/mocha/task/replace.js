@@ -9,7 +9,6 @@ const grunt = require('grunt');
 
 describe('src/task/replace', () => {
     it('default', (done) => {
-
         const folderTemplates = 'test/data/replace/template/';
         const folderBuild = 'build/mocha/replace/';
 

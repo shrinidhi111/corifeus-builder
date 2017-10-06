@@ -25,16 +25,16 @@ module.exports = (grunt) => {
         mocha_istanbul: {
             'cory-coverage': {
                 src: [
-                    folder.bin.root ,
-                    folder.src.root ,
-                    folder.test.mocha.root,
+//                    `${process.cwd()}/${folder.bin.root}` ,
+                    `${process.cwd()}/${folder.src.root}` ,
+                    `${process.cwd()}/${folder.test.mocha.root}`,
                 ], // the folder, not the files
                 options: {
                     mask: '**/*.js',
                     includes: [
-                        folder.bin.root + '**' ,
-                        folder.src.root + '**' ,
-                        folder.test.root + '**',
+//                        `${process.cwd()}/${folder.bin.root}**` ,
+                        `${process.cwd()}/${folder.src.root}**` ,
+                        `${process.cwd()}/${folder.test.mocha.root}**`,
                     ],
                     /*
                     to add more local files, outside directories
