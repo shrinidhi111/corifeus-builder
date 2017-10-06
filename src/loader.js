@@ -42,6 +42,17 @@ class loader {
             replacer = options.replacer.type;
         }
 
+        const replaceFiles = [
+            'artifacts/**/*.md',
+            'docs/**/*.md',
+            '*.md',
+            '!node_modules',
+            '!build',
+            '!LICENSE.md',
+            '!readme.md',
+            '!README.md',
+        ]
+
         const defaultHeader = {
             header: true,
             replace: `
@@ -49,15 +60,7 @@ class loader {
 
 ---
                         `,
-            files: [
-                'artifacts/**/*.md',
-                '*.md',
-                '!node_modules',
-                '!build',
-                '!LICENSE.md',
-                '!readme.md',
-                '!README.md',
-            ]
+            files: replaceFiles
         }
 
         const defaultFooter =  {
@@ -69,13 +72,7 @@ class loader {
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 `,
-            files: [
-                'artifacts/**/*.md',
-                '*.md',
-                '!node_modules',
-                '!build',
-                '!LICENSE.md',
-            ]
+            files: replaceFiles
         };
 
         const nodeVersion = `# \${pkg.description}
