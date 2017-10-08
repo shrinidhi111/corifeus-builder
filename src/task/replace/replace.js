@@ -45,7 +45,7 @@ module.exports = async (grunt, inConfig, done) => {
             repo: undefined
         };
 
-        const result = Promise.all([
+        const result = await Promise.all([
             git.branch,
             git.date,
             git.commit,
