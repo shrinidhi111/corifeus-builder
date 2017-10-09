@@ -23,6 +23,7 @@ cory-noop
 cory-npm
 cory-replace
 cory-replace:footer
+cory-replace:footerMain
 cory-replace:header
 cory-replace:headerMain
 cory-test
@@ -39,8 +40,9 @@ watch:cory-wait
 
 ---
 
-[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.7.892-165
+[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.7.910-170 
 
-[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
+[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
+ 
 
 [//]: #@corifeus-footer:end

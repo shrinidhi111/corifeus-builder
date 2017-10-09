@@ -30,6 +30,7 @@ module.exports = (grunt) => {
                     `${process.cwd()}/${folder.test.mocha.root}`,
                 ], // the folder, not the files
                 options: {
+                    mochaOptions: ['--exit'],
                     mask: '**/*.js',
                     includes: [
 //                        `${process.cwd()}/${folder.bin.root}**` ,

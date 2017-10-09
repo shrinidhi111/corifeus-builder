@@ -68,9 +68,10 @@ class loader {
             replace: `
 ---
 
-[**\${pkg.name.toUpperCase()}**](https://pages.corifeus.com/\${git.repo}) Build v\${pkg.version}
+[**\${pkg.name.toUpperCase()}**](https://pages.corifeus.com/\${git.repo}) Build v\${pkg.version} 
 
-[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
+[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
+ 
 `,
             files: replaceFiles
         };
@@ -96,6 +97,12 @@ https://nodejs.org/en/download/package-manager/
 
 # Description  
 `
+
+        const footerMain = _.clone(defaultFooter);
+        footerMain.files = [
+            'readme.md',
+            'README.md',
+        ];
         switch(replacer) {
             case 'corifeus':
                 options.config['cory-replace'] = {
@@ -112,6 +119,7 @@ ${nodeVersion}
                             'README.md',
                         ]
                     },
+                    footerMain: footerMain,
                     header: defaultHeader,
                     footer: defaultFooter
                 }
