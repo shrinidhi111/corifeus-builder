@@ -150,6 +150,7 @@ ${nodeVersion}
                             'README.md',
                         ]
                     },
+                    footerMain: footerMain,
                     header: defaultHeader,
                     footer: defaultFooter
                 };
