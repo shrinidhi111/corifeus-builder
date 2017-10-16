@@ -137,13 +137,45 @@ ${nodeVersion}
                 options.config['cory-replace'] = {
                     headerMain: {
                         header: true,
-/*  [![Trello](https://img.shields.io/badge/Trello-p3x-026aa7.svg)](https://trello.com/b/gqKHzZGy/p3x)
- */
+                        /*  [![Trello](https://img.shields.io/badge/Trello-p3x-026aa7.svg)](https://trello.com/b/gqKHzZGy/p3x)
+                         */
 
                         replace: `
   ${nonEmptyP3x}
  
 ${nodeVersion}
+                        `,
+                        files: [
+                            'readme.md',
+                            'README.md',
+                        ]
+                    },
+                    footerMain: footerMain,
+                    header: defaultHeader,
+                    footer: defaultFooter
+                };
+                break;
+
+            case 'lede':
+                let nonEmptyLede = '';
+                if (!options.empty) {
+                    nonEmptyLede = `[![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master) 
+
+# \${pkg.description}
+
+---
+
+`
+                }
+
+                options.config['cory-replace'] = {
+                    headerMain: {
+                        header: true,
+                        /*  [![Trello](https://img.shields.io/badge/Trello-p3x-026aa7.svg)](https://trello.com/b/gqKHzZGy/p3x)
+                         */
+
+                        replace: `
+  ${nonEmptyLede} 
                         `,
                         files: [
                             'readme.md',
