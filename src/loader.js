@@ -163,8 +163,6 @@ ${nodeVersion}
 
 # \${pkg.description}
 
----
-
 `
                 }
 
