@@ -16,7 +16,7 @@ This is an open source project. Just code.
    
 ### Built on Node 
 ``` 
-v8.8.0
+v8.8.1
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -185,7 +185,7 @@ Until it works for await/async, removed from **JSDoc**.
 
 ---
 
-[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.7.933-192 
+[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.7.937-193 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  
