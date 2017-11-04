@@ -80,11 +80,15 @@ class loader {
 
         const hideNodeVersion = options.hasOwnProperty('replacer') && options.replacer.node === false;
 
-        let nodeVersion = hideNodeVersion ? `# \${pkg.description}  
+        let hideBuild = options.hasOwnProperty('replacer') && options.replacer.build === false;
+
+        let build = hideBuild ? '' : `[![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)`
+
+        let nodeVersion = hideNodeVersion ? `# \${pkg.description}  v\${pkg.version}    
 
 # Description  
 
-` : `# \${pkg.description}  
+` : `# \${pkg.description} v\${pkg.version}  
 
 This is an open source project. Just code.
 
@@ -117,7 +121,7 @@ https://nodejs.org/en/download/package-manager/
                     headerMain: {
                         header: true,
                         replace: `
- [![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  
+ ${build}  
  
 ---
 ${nodeVersion}
@@ -136,7 +140,7 @@ ${nodeVersion}
             case 'p3x':
                 let nonEmptyP3x = '';
                 if (!options.empty) {
-                    nonEmptyP3x = `[![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master) 
+                    nonEmptyP3x = `${build} 
 
 ---
 `
