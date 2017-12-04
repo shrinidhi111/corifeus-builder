@@ -90,7 +90,7 @@ class loader {
 
 ` : `# \${pkg.description} v\${pkg.version}  
 
-This is an open source project. Just code.
+This is an open source project. Just code. If you like this code, please add a star in GitHub and you really like, you can donate as well. Thanks you so much!
 
 ### Node Version Requirement 
 \`\`\` 
