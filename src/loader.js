@@ -2,6 +2,7 @@ const task = require('./task/index');
 const folder = require('./config/folder/index');
 const _ = require('lodash');
 const utils = require('corifeus-utils');
+const fs = require('fs');
 
 class loader {
     constructor(grunt) {
@@ -78,6 +79,17 @@ class loader {
             files: replaceFiles
         };
 
+        let angularVersion;
+        const angularPkgPath = `${process.cwd()}/node_modules/@angular/common/package.json`;
+        if (fs.existsSync(angularPkgPath)) {
+            const angularPkg = JSON.parse(fs.readFileSync(angularPkgPath).toString());
+            angularVersion = `
+# Built on Angular
+
+\`\`\`${angularPkg.version}\`\`\`            
+`
+        }
+
         const hideNodeVersion = options.hasOwnProperty('replacer') && options.replacer.node === false;
 
         let hideBuild = options.hasOwnProperty('replacer') && options.replacer.build === false;
@@ -110,6 +122,8 @@ The \`\`\`async\`\`\` and \`\`\`await\`\`\` keywords are required.
 
 Install NodeJs:    
 https://nodejs.org/en/download/package-manager/    
+
+${angularVersion}
 
 # Description  
 `
