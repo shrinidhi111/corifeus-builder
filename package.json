@@ -1,11 +1,11 @@
 {
     "name": "corifeus-builder",
-    "version": "1.7.1132-271",
+    "version": "1.7.1137-273",
     "corifeus": {
         "icon": "fa fa-gavel",
         "code": "Make",
         "publish": true,
-        "nodejs": "v9.3.0"
+        "nodejs": "v9.4.0"
     },
     "description": "Corifeus Builder - Make",
     "main": "src/index.js",
@@ -34,7 +34,7 @@
     },
     "homepage": "https://pages.corifeus.com/corifeus-builder",
     "dependencies": {
-        "corifeus-utils": "^1.1.762-264",
+        "corifeus-utils": "^1.1.767-266",
         "fs-extra": "^5.0.0",
         "grunt": "^1.0.1",
         "grunt-contrib-clean": "^1.1.0",
@@ -47,7 +47,7 @@
         "jit-grunt": "^0.10.0",
         "mocha": "^4.1.0",
         "mz": "^2.7.0",
-        "should": "^13.2.0",
+        "should": "^13.2.1",
         "time-grunt": "^1.4.0"
     },
     "dependencies-removed": {
