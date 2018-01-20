@@ -186,6 +186,7 @@ ${nodeVersion}
                 };
                 break;
 
+            case 'build':
             case 'lede':
                 let nonEmptyLede = '';
                 if (!options.empty) {
