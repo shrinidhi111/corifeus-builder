@@ -83,7 +83,7 @@ class loader {
             files: replaceFiles
         };
 
-        let angularVersion;
+        let angularVersion = '';
         const angularPkgPath = `${process.cwd()}/node_modules/@angular/common/package.json`;
         if (fs.existsSync(angularPkgPath)) {
             const angularPkg = JSON.parse(fs.readFileSync(angularPkgPath).toString());
