@@ -8,7 +8,13 @@ module.exports = (grunt) => {
         if (
             fs.existsSync('./node_modules/protractor/bin/webdriver-manager')
             &&
+
+            !fs.existsSync('./node_modules/protractor/node_modules/webdriver-manager/selenium/update-config.json')
+
+            &&
+                
             !fs.existsSync('./node_modules/webdriver-manager/selenium/update-config.json')
+
         ) {
             grunt.log.write('Protractor found on the path')
             try {
