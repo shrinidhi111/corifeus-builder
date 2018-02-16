@@ -90,7 +90,10 @@ class loader {
             angularVersion = `
 # Built on Angular
 
-\`\`\`${angularPkg.version}\`\`\`            
+\`\`\`text
+${angularPkg.version}
+\`\`\`
+            
 `
         }
 
