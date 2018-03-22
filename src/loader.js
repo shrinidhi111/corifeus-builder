@@ -84,6 +84,25 @@ class loader {
         };
 
         let angularVersion = '';
+        let nodeJsInfo = `### Node Version Requirement 
+\`\`\` 
+\${pkg.engines.node} 
+\`\`\`  
+   
+### Built on Node 
+\`\`\` 
+${process.version}
+\`\`\`   
+   
+The \`\`\`async\`\`\` and \`\`\`await\`\`\` keywords are required.
+
+Install NodeJs:    
+https://nodejs.org/en/download/package-manager/`;
+
+        if (options.replacer.hasOwnProperty('nodejsinfo') && options.replacer.nodejsinfo === false) {
+            nodeJsInfo = '';
+        }
+
         const angularPkgPath = `${process.cwd()}/node_modules/@angular/common/package.json`;
         if (fs.existsSync(angularPkgPath)) {
             const angularPkg = JSON.parse(fs.readFileSync(angularPkgPath).toString());
@@ -109,26 +128,14 @@ ${angularPkg.version}
 
 ` : `# \${pkg.description} v\${pkg.version}  
 
-This is an open source project. Just code. If you like this code, please add a star in GitHub and if you really like, you can donate as well. Thanks you so much!
+This is an open-source project. Star this repository if you like it, or even donate!  Thank you so much! :)
 
-Given, I have my own server, with dynamic IP address, it could happen that the server for about max 5 minutes can not be reachable for the dynamic DNS or very rarely I backup with Clonzilla the SSD or something with the electricity (too much hoovering or cleaning - but I worked on it, so should not happen again), but for some reason, it is not reachable please hang on for 5-30 minutes and it will be back for sure. 
+I run my own server with dynamic IP address so it may happen that the server can not be reachable for about max 5 minutes due to the dynamic DNS. The server may also be unreachable when I backup the SSD with Clonzilla (very rarely) or an electrical issue (but this should not happen again). When he server is down, please hang on for 5-30 minutes and the server will be back up.
 
-All my domains (patrikx3.com and corifeus.com) could have errors right now, since I am developing in my free time and you can catch glitches, but usually it is stable (imagine updating everything always, which is weird).
+All my domains (patrikx3.com and corifeus.com) could have errors since I am developing in my free time. However, it is usually stable.
 
-### Node Version Requirement 
-\`\`\` 
-\${pkg.engines.node} 
-\`\`\`  
-   
-### Built on Node 
-\`\`\` 
-${process.version}
-\`\`\`   
-   
-The \`\`\`async\`\`\` and \`\`\`await\`\`\` keywords are required.
 
-Install NodeJs:    
-https://nodejs.org/en/download/package-manager/    
+${nodeJsInfo}    
 
 ${angularVersion}
 
