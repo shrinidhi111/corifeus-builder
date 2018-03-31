@@ -18,7 +18,7 @@ module.exports = (grunt) => {
         ) {
             grunt.log.write('Protractor found on the path')
             try {
-                execSync('node ./node_modules/protractor/bin/webdriver-manager update', {
+                execSync('node ./node_modules/protractor/bin/webdriver-manager update --gecko=false', {
                     stdio: `inherit`
                 })
                 grunt.log.write('')
