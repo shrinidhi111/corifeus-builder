@@ -57,9 +57,8 @@ class loader {
         const defaultHeader = {
             header: true,
             replace: `
-## \${pkg.description}
+# \${pkg.description}
 
----
                         `,
             files: replaceFiles
         }
@@ -174,7 +173,6 @@ ${nodeVersion}
                 if (!options.empty) {
                     nonEmptyP3x = `${build} 
 
----
 `
                 }
 
@@ -245,9 +243,8 @@ ${nodeVersion}
                     header: {
                         header: true,
                         replace: `
-## \${pkg.description}
+# \${pkg.description}
 
----
                         `,
                         files: [
                             'readme.md',
