@@ -54,7 +54,7 @@ taskBuildAngular.push('cory-replace');
 taskBuildAngularAot.push('cory-replace');
 taskBuildAngularAotJit.push('cory-replace');
 
-const taskTest = ['jshint', 'mochaTest'];
+const taskTest = [ /** 'jshint', **/ 'mochaTest'];
 
 const runAll = taskBuild.slice();
 runAll.push('watch:cory-js-all');
@@ -81,12 +81,12 @@ module.exports = {
         ],
         js: runAll,
         jsTest: ['mochaTest'],
-        jsDoc: ['jsdoc', 'watch:cory-doc']
+//        jsDoc: ['jsdoc', 'watch:cory-doc']
     },
     watch: {
         jsAll: taskBuild,
         jsTest: taskTest,
-        jsDoc: ['jsdoc']
+//        jsDoc: ['jsdoc']
     },
     test: {
         jsTest: taskTest,

@@ -47,9 +47,11 @@ module.exports = {
     },
     build: {
         root: folderBuild,
+        /*
         jsdoc: {
             root: folderBuildJsdoc
         },
+        */
         typedoc: {
             root: folderBuildTypedoc
         },

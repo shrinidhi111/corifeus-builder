@@ -10,6 +10,7 @@ module.exports = (grunt) => {
             'cory-build': {
             }
         },
+        /*
         jshint: {
             files: folder.files.all,
             options: {
@@ -17,6 +18,7 @@ module.exports = (grunt) => {
                 "esversion": 6
             }
         },
+        */
         mochaTest: {
             'cory-test-js': {
                 src: folder.files.mocha
@@ -79,10 +81,12 @@ module.exports = (grunt) => {
                 files: folder.files.all,
                 tasks: task.watch.jsTest
             },
+            /*
             'cory-js-doc': {
                 files: folder.files.all,
                 tasks: task.watch.doc
             },
+            */
         },
         /*
          jsdoc: {

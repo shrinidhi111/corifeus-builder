@@ -9,12 +9,12 @@ class loader {
         this.grunt = grunt
 
         this.configJit = {
-            jshint: 'grunt-contrib-jshint',
+//            jshint: 'grunt-contrib-jshint',
             mochaTest: 'grunt-mocha-test',
             mocha_istanbul: 'grunt-mocha-istanbul',
             clean: 'grunt-contrib-clean',
             watch: 'grunt-contrib-watch',
-            jsdoc: 'grunt-contrib-jsdoc',
+//            jsdoc: 'grunt-contrib-jsdoc',
         };
     }
 
