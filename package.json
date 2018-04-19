@@ -1,6 +1,6 @@
 {
     "name": "corifeus-builder",
-    "version": "1.7.1317-356",
+    "version": "1.7.1322-358",
     "corifeus": {
         "icon": "fa fa-gavel",
         "code": "Make",
@@ -34,7 +34,7 @@
     },
     "homepage": "https://pages.corifeus.com/corifeus-builder",
     "dependencies": {
-        "corifeus-utils": "^1.1.941-339",
+        "corifeus-utils": "^1.1.946-341",
         "fs-extra": "^5.0.0",
         "grunt": "^1.0.2",
         "grunt-contrib-clean": "^1.1.0",
@@ -44,7 +44,7 @@
         "grunt-mocha-test": "^0.13.3",
         "istanbul": "^1.1.0-alpha.1",
         "jit-grunt": "^0.10.0",
-        "mocha": "^5.1.0",
+        "mocha": "^5.1.1",
         "mz": "^2.7.0",
         "should": "^13.2.1",
         "time-grunt": "^1.4.0"
