@@ -38,7 +38,7 @@ module.exports = (grunt) => {
         
 Skeleton folders
         
-\`\`\`javscript        
+\`\`\`js        
 `;
         folders.sort().forEach((element) => template += `${element}
 `);
