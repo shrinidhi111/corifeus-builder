@@ -47,6 +47,7 @@ module.exports = async (pkgFile) => {
     pkg.homepage = `https://pages.corifeus.com/${repo}`;
 
     pkg.corifeus.nodejs = process.version
+    pkg.corifeus.reponame = repo;
 
     const newPkgFile = JSON.stringify(pkg, null, 4);
     await fs.writeFile(pkgFile, newPkgFile)

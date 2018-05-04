@@ -20,6 +20,10 @@ class loader {
 
     load(options) {
 
+        let pkg = JSON.parse(fs.readFileSync(`${process.cwd()}/package.json`, 'utf8'));
+        pkg.corifeus = pkg.corifeus || {};
+        let originalPkg = JSON.stringify(pkg)
+
         const grunt = this.grunt;
 
         options = options || {};
@@ -42,6 +46,51 @@ class loader {
         } else if (options.replacer.hasOwnProperty('type')) {
             replacer = options.replacer.type;
         }
+
+        let opencollectiveHeader = ''
+        let opencollectiveFooter = ''
+        pkg.corifeus.opencollective = false;
+        if (options.replacer.hasOwnProperty('opencollective') && options.replacer.opencollective === true) {
+            pkg.corifeus.opencollective = true;
+
+            pkg.collective = {
+                type: "opencollective",
+                url: `https://opencollective.com/${pkg.name}`
+            }
+
+            opencollectiveHeader = ` [![Backers on Open Collective](https://opencollective.com/\${pkg.name}/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/\${pkg.name}/sponsors/badge.svg)](#sponsors)`
+            opencollectiveFooter = `
+
+## Contributors
+
+This project exists thanks to all the people who contribute.  
+   
+<a href="https://github.com/patrikx3/\${pkg.corifeus.reponame}/graphs/contributors"><img src="https://opencollective.com/\${pkg.name}/contributors.svg?width=890&button=false" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/\${pkg.name}#backer)]
+
+<a href="https://opencollective.com/\${pkg.name}#backers" target="_blank"><img src="https://opencollective.com/\${pkg.name}/backers.svg?width=890"></a>
+
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/\${pkg.name}#sponsor)]
+
+<a href="https://opencollective.com/\${pkg.name}/sponsor/0/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/\${pkg.name}/sponsor/1/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/\${pkg.name}/sponsor/2/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/\${pkg.name}/sponsor/3/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/\${pkg.name}/sponsor/4/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/\${pkg.name}/sponsor/5/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/\${pkg.name}/sponsor/6/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/\${pkg.name}/sponsor/7/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/\${pkg.name}/sponsor/8/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/\${pkg.name}/sponsor/9/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/9/avatar.svg"></a>
+        
+`        }
 
         const replaceFiles = [
             'artifacts/**/*.md',
@@ -82,7 +131,7 @@ class loader {
 [The Smartest IDE for MongoDB](https://www.nosqlbooster.com)
   
   
- 
+${opencollectiveFooter} 
 `,
             files: replaceFiles
         };
@@ -107,6 +156,7 @@ https://nodejs.org/en/download/package-manager/`;
             nodeJsInfo = '';
         }
 
+
         const angularPkgPath = `${process.cwd()}/node_modules/@angular/common/package.json`;
         if (fs.existsSync(angularPkgPath)) {
             const angularPkg = JSON.parse(fs.readFileSync(angularPkgPath).toString());
@@ -125,6 +175,8 @@ ${angularPkg.version}
         let hideBuild = options.hasOwnProperty('replacer') && options.replacer.build === false;
 
         let build = hideBuild ? '' : `[![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)`
+
+        build += opencollectiveHeader
 
         let nodeVersion = hideNodeVersion ? `# \${pkg.description}  v\${pkg.version}    
 
@@ -147,6 +199,7 @@ ${angularVersion}
 `
 
         const footerMain = _.clone(defaultFooter);
+
         footerMain.files = [
             'readme.md',
             'README.md',
@@ -320,6 +373,10 @@ ${nodeVersion}
         require('jit-grunt')(grunt, options.jit);
         require('time-grunt')(grunt);
 
+
+        if (originalPkg !== JSON.stringify(pkg)) {
+            fs.writeFileSync(`${process.cwd()}/package.json`, JSON.stringify(pkg, null, 2))
+        }
     }
 
     js(options) {
