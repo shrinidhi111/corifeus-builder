@@ -4,7 +4,8 @@ const folder = require('../folder');
 const taskBuildEmpty = [
     'cory-npm',
     'clean',
-    'cory-replace'
+    'cory-replace',
+    'cory:license',
 ]
 
 const taskBuild = [
@@ -13,7 +14,8 @@ const taskBuild = [
     'clean',
     'mocha_istanbul:cory-coverage',
     /*, 'jsdoc'*/
-    'cory-replace'
+    'cory-replace',
+    'cory:license',
 ];
 const tasBuildTs =  [
     'cory-ensure-protractor',
@@ -23,7 +25,8 @@ const tasBuildTs =  [
     'ts:build',
     'mocha_istanbul:cory-coverage-ts',
     /*, 'jsdoc'*/
-    'cory-replace'
+    'cory-replace',
+    'cory:license',
 ];
 
 const taskBuildAngular = [
@@ -32,6 +35,7 @@ const taskBuildAngular = [
     'cory-npm-angular',
     'clean',
     'copy:cory-build',
+    'cory:license',
 ];
 
 const taskBuildAngularAot = taskBuildAngular.slice();

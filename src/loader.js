@@ -44,6 +44,27 @@ class loader {
         grunt.config.merge(config);
         Object.keys(task).forEach((taskItem) => task[taskItem](grunt))
 
+        grunt.registerTask('cory:kill', function() {
+            process.exit(1);
+        });
+
+
+        grunt.registerTask('cory:upgrade', function () {
+
+            const upgrade = require('./utils/upgrade')
+            upgrade({
+                grunt: grunt,
+                gruntThis: this,
+                defaultOptions: options,
+            });
+        })
+
+        grunt.registerTask('cory:license', function () {
+
+            const license = require('./utils').license()
+            fs.writeFileSync(`${process.cwd()}/LICENSE`, license)
+        })
+
 
         grunt.registerTask('cory-test', (target) => {
             switch(target) {
