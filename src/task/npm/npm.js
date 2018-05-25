@@ -42,7 +42,7 @@ module.exports = async (pkgFile) => {
 
     pkg.name = `${prefix}${repo}`;
 
-    pkg.engines = { "node" : ">=10.0.0" };
+    pkg.engines = { "node" : ">=10.2.1" };
 
     pkg.homepage = `https://pages.corifeus.com/${repo}`;
 
