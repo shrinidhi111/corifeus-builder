@@ -162,7 +162,7 @@ I run my own server with dynamic IP address so it may happen that the server can
 
 All my domains (patrikx3.com and corifeus.com) could have errors since I am developing in my free time. However, it is usually stable.
 
-**Bugs are evident.™️**
+**Bugs are evident™ - MATRIX️**
 
 ${nodeJsInfo}    
 
