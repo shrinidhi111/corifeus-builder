@@ -16,7 +16,7 @@ const upgrade = async (options) => {
                 `--packageFile ` + path.resolve(`${cwd}/package.json`),
             ]
         }
-//        grunt.log.writeln(`Executing`, JSON.stringify(command, null, 2))
+//        grunt.log.writeln(`Executing`, JSON.stringify(command, null, 4))
 
         await gruntUtil.spawn(options, command)
 

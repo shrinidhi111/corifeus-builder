@@ -110,7 +110,7 @@ class loader {
 
 
         if (originalPkg !== JSON.stringify(pkg)) {
-            fs.writeFileSync(`${process.cwd()}/package.json`, JSON.stringify(pkg, null, 2))
+            fs.writeFileSync(`${process.cwd()}/package.json`, JSON.stringify(pkg, null, 4))
         }
     }
 
