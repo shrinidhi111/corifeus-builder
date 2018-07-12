@@ -1,6 +1,6 @@
 {
     "name": "corifeus-builder",
-    "version": "1.8.36-434",
+    "version": "1.8.40-440",
     "corifeus": {
         "icon": "fas fa-gavel",
         "code": "Make",
