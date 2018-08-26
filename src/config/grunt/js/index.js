@@ -34,6 +34,10 @@ module.exports = (grunt) => {
                 options: {
                     mochaOptions: ['--exit'],
                     mask: '**/*.js',
+                    excludes: [
+                        `${process.cwd()}/${folder.src.root}**/*.css` ,
+                        `${process.cwd()}/${folder.src.root}**/*.scss` ,
+                    ],
                     includes: [
 //                        `${process.cwd()}/${folder.bin.root}**` ,
                         `${process.cwd()}/${folder.src.root}**` ,

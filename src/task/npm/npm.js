@@ -1,4 +1,4 @@
-const fs = require('mz/fs');
+const fs = require('fs').promises;
 const git = require('../../git');
 
 module.exports = async (pkgFile) => {
@@ -42,7 +42,7 @@ module.exports = async (pkgFile) => {
 
     pkg.name = `${prefix}${repo}`;
 
-    pkg.engines = { "node" : ">=10.5.0" };
+    pkg.engines = { "node" : ">=10.8.0" };
 
     pkg.homepage = `https://pages.corifeus.com/${repo}`;
 

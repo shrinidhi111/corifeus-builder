@@ -8,7 +8,7 @@
   
 [![NPM](https://nodei.co/npm/corifeus-builder.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/corifeus-builder/)
 ---
-# 🏗️ Corifeus Builder - Make v1.9.15-452  
+# 🏗️ Corifeus Builder - Make v1.9.21-457  
 
 This is an open-source project. Star this repository, if you like it, or even donate! Thank you so much! :)
 
@@ -20,12 +20,12 @@ All my domains (patrikx3.com and corifeus.com) could have errors, since I am dev
 
 ### Node Version Requirement 
 ``` 
->=10.5.0 
+>=10.8.0 
 ```  
    
 ### Built on Node 
 ``` 
-v10.8.0
+v10.9.0
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -196,7 +196,7 @@ Until it works for await/async, removed from **JSDoc**.
 
 ---
 
-[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.9.15-452 
+[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v1.9.21-457 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
