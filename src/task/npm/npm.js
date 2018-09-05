@@ -13,6 +13,10 @@ module.exports = async (pkgFile) => {
     const pkg = JSON.parse(result[2].toString());
     let version = pkg.version.split('.');
 
+    const date = new Date();
+    version[0] = date.getFullYear()
+    version[1] = date.getMonth() + 1
+
     const size = 3;
     if (version.length < size) {
         const extend = Array(size - version.length ).fill('0');
@@ -24,14 +28,21 @@ module.exports = async (pkgFile) => {
     })
 
     const subVersion = version[2].split('-');
-    subVersion[0] = parseInt(subVersion[0]) + 1;
+    subVersion[0] = date.getDate()
 
-    subVersion[1] = commit + 1;
     if (subVersion[1] === undefined) {
         subVersion[1] = 0;
     }
+    subVersion[1] = parseInt(subVersion[1]) + 1;
+
+    const originalVersion = pkg.version.split('.')
+    const originalSubVersion = version[2].split('-');
+    if (`${originalVersion[0]}.${originalVersion[1]}.${originalSubVersion[0]}` !== `${version[0]}.${version[1]}.${subVersion[0]}`)  {
+        subVersion[1] = 0
+    }
 
     version[2] = subVersion.join('-');
+
 
     pkg.version = version.join('.');
 
@@ -42,7 +53,7 @@ module.exports = async (pkgFile) => {
 
     pkg.name = `${prefix}${repo}`;
 
-    pkg.engines = { "node" : ">=10.8.0" };
+    pkg.engines = { "node" : `>=${process.versions.node}` };
 
     pkg.homepage = `https://pages.corifeus.com/${repo}`;
 

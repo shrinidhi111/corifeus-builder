@@ -127,7 +127,7 @@ https://nodejs.org/en/download/package-manager/`;
     }
 
 
-    const angularPkgPath = `${process.cwd()}/node_modules/@angular/common/package.json`;
+    const angularPkgPath = `${process.cwd()}/node_modules/@angular/core/package.json`;
     if (fs.existsSync(angularPkgPath)) {
         const angularPkg = JSON.parse(fs.readFileSync(angularPkgPath).toString());
         angularVersion = `
