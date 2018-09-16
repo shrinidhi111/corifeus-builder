@@ -53,7 +53,8 @@ module.exports = async (pkgFile) => {
 
     pkg.name = `${prefix}${repo}`;
 
-    pkg.engines = { "node" : `>=${process.versions.node}` };
+    // pkg.engines = { "node" : `>=${process.versions.node}` };
+    pkg.engines = { "node" : `>=8.11.4` };
 
     pkg.homepage = `https://pages.corifeus.com/${repo}`;
 
