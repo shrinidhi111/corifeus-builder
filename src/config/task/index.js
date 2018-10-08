@@ -39,7 +39,8 @@ const taskBuildAngular = [
 ];
 
 const taskBuildAngularAot = taskBuildAngular.slice();
-taskBuildAngularAot.push('webpack:cory-build-aot');
+//taskBuildAngularAot.push('webpack:cory-build-aot');
+taskBuildAngularAot.push('cory-build-aot');
 
 let taskBuildAngularAotJit = taskBuildAngular.slice();
 taskBuildAngularAotJit.push('cory-compile-angular');
