@@ -1,11 +1,11 @@
 {
     "name": "corifeus-builder",
-    "version": "2018.10.8-3",
+    "version": "2018.10.20-5",
     "corifeus": {
         "icon": "fas fa-gavel",
         "code": "Make",
         "publish": true,
-        "nodejs": "v10.11.0",
+        "nodejs": "v10.12.0",
         "reponame": "corifeus-builder",
         "opencollective": false,
         "build": true
@@ -37,7 +37,7 @@
     },
     "homepage": "https://pages.corifeus.com/corifeus-builder",
     "dependencies": {
-        "corifeus-utils": "^2018.10.8-3",
+        "corifeus-utils": "^2018.10.20-3",
         "fs-extra": "^7.0.0",
         "grunt": "^1.0.3",
         "grunt-contrib-clean": "^2.0.0",

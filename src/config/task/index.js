@@ -46,7 +46,8 @@ let taskBuildAngularAotJit = taskBuildAngular.slice();
 taskBuildAngularAotJit.push('cory-compile-angular');
 taskBuildAngularAotJit.push('webpack:cory-build-aot-jit');
 
-taskBuildAngular.push('webpack:cory-build');
+//taskBuildAngular.push('webpack:cory-build');
+taskBuildAngular.push('cory-build-jit');
 if (fs.existsSync(folder.test.angularProtractor.root)) {
     taskBuildAngular.push('connect:cory-angular');
     taskBuildAngular.push('protractor:cory-angular-chrome');
