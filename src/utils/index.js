@@ -12,7 +12,7 @@ const gruntSpawnErrorHandler = (options) => {
     grunt.log.error(String(result));
 }
 
-const spawn = (options, spawnddptions) => {
+const spawn = (options, spawnOptions) => {
 
     return new Promise((resolve, reject) => {
 
