@@ -50,8 +50,9 @@ module.exports = async (pkgFile) => {
         pkg.corifeus = {};
     }
     const prefix = pkg.corifeus.prefix || '';
+    const postfix = pkg.corifeus.postfix || '';
 
-    pkg.name = `${prefix}${repo}`;
+    pkg.name = `${prefix}${repo}${postfix}`;
 
     // pkg.engines = { "node" : `>=${process.versions.node}` };
     pkg.engines = { "node" : `>=10.13.0` };

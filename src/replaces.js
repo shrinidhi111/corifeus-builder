@@ -190,7 +190,7 @@ ${angularVersion}
                     replace: `
  ${build}  
  
----
+${build.trim() === '' ? '' : '---'}
 ${nodeVersion}
                         `,
                     files: [
