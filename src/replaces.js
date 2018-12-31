@@ -158,19 +158,25 @@ ${angularPkg.version}
 
     build += opencollectiveHeader
 
-    let nodeVersion = hideNodeVersion ? `# \${pkg.description}  v\${pkg.version}    
-
-# Description  
-
-` : `# \${pkg.description} v\${pkg.version}  
-
+    const domainInfo= `  
 This is an open-source project. Star this repository, if you like it, or even donate! Thank you so much! :)
 
 I run my own server with dynamic IP address, so, it may happen, that the server can not be reachable for about max 15 minutes, due to nature of the dynamic DNS. The server may also be unreachable, when I backup the SSD with Clonzilla (very rarely) or an electrical issue (but this should not happen again). When the server is down, please hang on for 15-30 minutes and the server will be back up.
 
 All my domains (patrikx3.com and corifeus.com) could have errors, since I am developing in my free time. However, it is usually stable.
 
-**Bugs are evident™ - MATRIX️**
+**Bugs are evident™ - MATRIX️**  
+    `
+
+    let nodeVersion = hideNodeVersion ? `# \${pkg.description}  v\${pkg.version}    
+
+${domainInfo}
+  
+# Description  
+
+` : `# \${pkg.description} v\${pkg.version}  
+
+${domainInfo}
 
 ${nodeJsInfo}    
 
