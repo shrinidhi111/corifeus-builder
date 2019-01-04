@@ -11,6 +11,12 @@ module.exports = (options, pkg) => {
     }
 
 
+    const commonBuild = `
+
+**I am trying to save up for a static IP address, if you have to give, any small amount, please donate! Thank you very much!**
+     
+[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) `
+
     let opencollectiveHeader = ''
     let opencollectiveFooter = ''
     pkg.corifeus.opencollective = false;
@@ -148,7 +154,7 @@ ${angularPkg.version}
 
 //    let build = hideBuild ? '' : `[![Build Status](https://travis-ci.org/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.org/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)`
 
-    let build = '[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) '
+    let build = commonBuild
 
     // https://api.travis-ci.com/patrikx3/redis-ui-material.svg?branch=master
     build += hideBuild ? '' : `[![Build Status](https://api.travis-ci.com/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.com/patrikx3/\${git.repo}) 
@@ -275,7 +281,7 @@ ${nodeVersion}
                      */
 
                     replace: `
-  ${nonEmptyBuild} 
+ ${commonBuild} ${nonEmptyBuild} 
                         `,
                     files: [
                         'readme.md',
