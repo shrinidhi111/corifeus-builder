@@ -163,7 +163,7 @@ ${angularPkg.version}
     build += opencollectiveHeader
 
     const domainInfo= `  
-This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much! :)
+🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
 
 I run my own server with dynamic IP address, so, it may happen, that the server can not be reachable for about max 15 minutes, due to nature of the dynamic DNS. The server may also be unreachable, when I backup the SSD with Clonzilla (very rarely) or an electrical issue (but this should not happen again). When the server is down, please hang on for 15-30 minutes and the server will be back up.
 
