@@ -86,6 +86,8 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
         files: replaceFiles
     }
 
+
+    let jetbrainsUrl = 'https://www.jetbrains.com/?from=patrikx3'
     const defaultFooter =  {
         footer: true,
         replace: `
@@ -98,9 +100,9 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 ## P3X Sponsors
 
-[IntelliJ - The most intelligent Java IDE](https://www.jetbrains.com)
+[IntelliJ - The most intelligent Java IDE](${jetbrainsUrl})
   
-[![JetBrains](https://cdn.corifeus.com/assets/svg/jetbrains-logo.svg)](https://www.jetbrains.com/) [![NoSQLBooster](https://cdn.corifeus.com/assets/png/nosqlbooster-70x70.png)](https://www.nosqlbooster.com/)
+[![JetBrains](https://cdn.corifeus.com/assets/svg/jetbrains-logo.svg)](${jetbrainsUrl}) [![NoSQLBooster](https://cdn.corifeus.com/assets/png/nosqlbooster-70x70.png)](https://www.nosqlbooster.com/)
 
 [The Smartest IDE for MongoDB](https://www.nosqlbooster.com)
   
