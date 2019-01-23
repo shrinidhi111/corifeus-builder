@@ -32,7 +32,7 @@ module.exports = (grunt) => {
                     `${process.cwd()}/${folder.test.mocha.root}`,
                 ], // the folder, not the files
                 options: {
-                    mochaOptions: ['--exit'],
+                    mochaOptions: [],
                     mask: '**/*.js',
                     excludes: [
                         `${process.cwd()}/${folder.src.root}**/*.css` ,
@@ -106,6 +106,8 @@ module.exports = (grunt) => {
          },
          */
     }
+
+
 
     return result;
 };
