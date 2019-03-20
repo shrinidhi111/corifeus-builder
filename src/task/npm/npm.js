@@ -15,7 +15,15 @@ module.exports = async (pkgFile) => {
 
     const date = new Date();
     version[0] = date.getFullYear()
-    version[1] = date.getMonth() + 1
+
+    const previousVersionYear = parseInt(version[0])
+    const previousVersionDate = parseInt(version[1])
+    const currentMonth = date.getMonth() + 1
+    if (currentMonth <= 6) {
+        version[1] = 4
+    } else {
+        version[1] = 10
+    }
 
     const size = 3;
     if (version.length < size) {
@@ -27,6 +35,14 @@ module.exports = async (pkgFile) => {
         return !Number.isInteger(parseInt(element)) ? '0' : element;
     })
 
+    //console.log('previousVersionDate', previousVersionDate, 'version[1]', version[1])
+    if (previousVersionDate === parseInt(version[1]) && previousVersionYear === parseInt(version[0])) {
+        version[2] = parseInt(version[2]) + 1
+    } else {
+        version[2] = 0
+    }
+
+    /*
     const subVersion = version[2].split('-');
     subVersion[0] = date.getDate()
 
@@ -42,7 +58,7 @@ module.exports = async (pkgFile) => {
     }
 
     version[2] = subVersion.join('-');
-
+    */
 
     pkg.version = version.join('.');
 
