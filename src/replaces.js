@@ -167,7 +167,7 @@ ${angularPkg.version}
     const domainInfo= `  
 🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
 
-Possible, this server, rarely, is down, please hang on for 15-30 minutes and the server will be back up.
+Possible, this server, rarely, is down, please, hang on for 15-30 minutes and the server will be back up.
 
 All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://corifeus.com)) could have minor errors, since I am developing in my free time. However, it is usually stable.
 
