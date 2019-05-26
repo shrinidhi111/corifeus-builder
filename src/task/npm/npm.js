@@ -32,14 +32,18 @@ module.exports = async (pkgFile) => {
     }
 
     version = version.map((element) => {
-        return !Number.isInteger(parseInt(element)) ? '0' : element;
+        return !Number.isInteger(parseInt(element)) ? '100' : element;
     })
 
     //console.log('previousVersionDate', previousVersionDate, 'version[1]', version[1])
     if (previousVersionDate === parseInt(version[1]) && previousVersionYear === parseInt(version[0])) {
         version[2] = parseInt(version[2]) + 1
     } else {
-        version[2] = 0
+        version[2] = 100
+    }
+
+    if (parseInt(version[2]) < 100) {
+        version[2] = 100
     }
 
     /*

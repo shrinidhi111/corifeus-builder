@@ -323,7 +323,7 @@ ${nodeVersion}
         const append = replace.substring(replace.indexOf('---'));
 
         options.config['cory-replace'].headerMain.replace = replace.substring(0, replace.indexOf('---')) + `  
-[![NPM](https://nodei.co/npm/\${pkg.name}.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/\${pkg.name}/)
+[![NPM](https://nodei.co/npm/\${pkg.name}.png?downloads=true&downloadRank=true)](https://www.npmjs.com/package/\${pkg.name}/)
 ` + append
     }
 
