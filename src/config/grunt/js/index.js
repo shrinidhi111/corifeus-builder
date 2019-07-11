@@ -5,10 +5,8 @@ module.exports = (grunt) => {
 
     const result = {
         copy: {
-            'cory-run': {
-            },
-            'cory-build': {
-            }
+            'cory-run': {},
+            'cory-build': {}
         },
         /*
         jshint: {
@@ -28,19 +26,19 @@ module.exports = (grunt) => {
             'cory-coverage': {
                 src: [
 //                    `${process.cwd()}/${folder.bin.root}` ,
-                    `${process.cwd()}/${folder.src.root}` ,
+                    `${process.cwd()}/${folder.src.root}`,
                     `${process.cwd()}/${folder.test.mocha.root}`,
                 ], // the folder, not the files
                 options: {
                     mochaOptions: [],
                     mask: '**/*.js',
                     excludes: [
-                        `${process.cwd()}/${folder.src.root}**/*.css` ,
-                        `${process.cwd()}/${folder.src.root}**/*.scss` ,
+                        `${process.cwd()}/${folder.src.root}**/*.css`,
+                        `${process.cwd()}/${folder.src.root}**/*.scss`,
                     ],
                     includes: [
 //                        `${process.cwd()}/${folder.bin.root}**` ,
-                        `${process.cwd()}/${folder.src.root}**` ,
+                        `${process.cwd()}/${folder.src.root}**`,
                         `${process.cwd()}/${folder.test.mocha.root}**`,
                     ],
                     /*
@@ -65,10 +63,10 @@ module.exports = (grunt) => {
         },
         watch: {
             'cory-wait': {
-              options: {
-                  reload: false
-              },
-               files: folder.files.all,
+                options: {
+                    reload: false
+                },
+                files: folder.files.all,
                 tasks: []
             },
             'cory-js-all': {
@@ -106,7 +104,6 @@ module.exports = (grunt) => {
          },
          */
     }
-
 
 
     return result;

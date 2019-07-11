@@ -32,7 +32,7 @@ class loader {
         options.config = _.merge(require('./config/grunt/js/index')(grunt), options.config)
         const config = options.config;
 
-        if (options.empty ) {
+        if (options.empty) {
             delete options.config['mocha_istanbul'];
             options.replacer = {
                 type: 'p3x',
@@ -44,7 +44,7 @@ class loader {
         grunt.config.merge(config);
         Object.keys(task).forEach((taskItem) => task[taskItem](grunt))
 
-        grunt.registerTask('cory:kill', function() {
+        grunt.registerTask('cory:kill', function () {
             process.exit(1);
         });
 
@@ -67,7 +67,7 @@ class loader {
 
 
         grunt.registerTask('cory-test', (target) => {
-            switch(target) {
+            switch (target) {
                 case 'js-mocha':
                     grunt.task.run([
                         'mochaTest',
@@ -92,7 +92,7 @@ class loader {
             }
         });
         grunt.registerTask('cory-build-run', (target) => {
-            switch(target) {
+            switch (target) {
                 case 'angular':
                     grunt.task.run(config.task.run.angular);
                     break;
@@ -128,7 +128,7 @@ class loader {
     ts(options) {
         options = options || {};
         options.config = _.merge(require('./config/grunt/ts/index')(), options.config || {}),
-        this.load(options);
+            this.load(options);
     }
 
 

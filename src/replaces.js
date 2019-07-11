@@ -4,7 +4,7 @@ const _ = require('lodash');
 module.exports = (options, pkg) => {
     options.replacer = options.replacer || {}
     let replacer = 'corifeus';
-    if (typeof(options.replacer) === 'string') {
+    if (typeof (options.replacer) === 'string') {
         replacer = options.replacer;
     } else if (options.replacer.hasOwnProperty('type')) {
         replacer = options.replacer.type;
@@ -64,7 +64,8 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 <a href="https://opencollective.com/\${pkg.name}/sponsor/8/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/\${pkg.name}/sponsor/9/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/9/avatar.svg"></a>
         
-`        }
+`
+    }
 
     const replaceFiles = [
         'artifacts/**/*.md',
@@ -88,10 +89,18 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 
     let jetbrainsUrl = 'https://www.jetbrains.com/?from=patrikx3'
-    const defaultFooter =  {
+    const defaultFooter = {
         footer: true,
         replace: `
 ---
+
+🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
+
+Possible, this server, rarely, is down, please, hang on for 15-30 minutes and the server will be back up.
+
+All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://corifeus.com)) could have minor errors, since I am developing in my free time. However, it is usually stable.
+
+
 
 [**\${pkg.name.toUpperCase()}**](https://pages.corifeus.com/\${git.repo}) Build v\${pkg.version} 
 
@@ -164,13 +173,7 @@ ${angularPkg.version}
 
     build += opencollectiveHeader
 
-    const domainInfo= `  
-🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
-
-Possible, this server, rarely, is down, please, hang on for 15-30 minutes and the server will be back up.
-
-All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://corifeus.com)) could have minor errors, since I am developing in my free time. However, it is usually stable.
-
+    const domainInfo = `  
 **Note about versioning:** Versions are cut in Major.Minor.Patch schema. Major is always the current year. Minor is either 4 (January - June) or 10 (July - December). Patch is incremental by every build. If there is a breaking change, it should be noted in the readme.
 
 **Bugs are evident™ - MATRIX️**  
@@ -199,7 +202,7 @@ ${angularVersion}
         'readme.md',
         'README.md',
     ];
-    switch(replacer) {
+    switch (replacer) {
         case 'corifeus':
             options.config['cory-replace'] = {
                 headerMain: {
@@ -256,13 +259,13 @@ ${nodeVersion}
         case 'openwrt':
             let nonEmptyBuild = '';
             if (!options.empty) {
-/*
-                nonEmptyBuild = `[![Build Status](https://travis-ci.com/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.com/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)
+                /*
+                                nonEmptyBuild = `[![Build Status](https://travis-ci.com/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.com/patrikx3/\${git.repo})  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/\${git.repo}/?branch=master)
 
-                # \${pkg.description}
+                                # \${pkg.description}
 
-`
-*/
+                `
+                */
                 nonEmptyBuild = `[![Build Status](https://travis-ci.com/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.com/patrikx3/\${git.repo}) [![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://uptimerobot.patrikx3.com/)
 
 # \${pkg.description}

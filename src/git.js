@@ -5,10 +5,10 @@ const date = exec('git log -1 --format=%at').then((stdout) => parseInt(stdout.jo
 const branch = exec('git rev-parse --abbrev-ref HEAD').then((stdout) => stdout.join('').toString().trim());
 const repo = exec('git config remote.origin.url').then((stdout) => {
     const data = stdout.join('').toString().split('/');
-    let repo = data[ data.length -1 ].trim();
+    let repo = data[data.length - 1].trim();
     const remove = '.git';
     if (repo.toLowerCase().endsWith(remove)) {
-        repo = repo.substr(0, repo.length - remove.length );
+        repo = repo.substr(0, repo.length - remove.length);
     }
     return repo;
 });

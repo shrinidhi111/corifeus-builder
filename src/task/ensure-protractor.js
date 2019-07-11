@@ -12,7 +12,7 @@ module.exports = (grunt) => {
             !fs.existsSync('./node_modules/protractor/node_modules/webdriver-manager/selenium/update-config.json')
 
             &&
-                
+
             !fs.existsSync('./node_modules/webdriver-manager/selenium/update-config.json')
 
         ) {
@@ -23,7 +23,7 @@ module.exports = (grunt) => {
                 })
                 grunt.log.write('')
                 done();
-            } catch(e) {
+            } catch (e) {
                 grunt.log.write('')
                 done(e)
             }

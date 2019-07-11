@@ -42,11 +42,11 @@ module.exports = (grunt, inConfig, done) => {
     console.log(`Inject result:`, inject);
 
     const destFile = path.resolve(config.dest);
-    let data = fs.readFileSync(destFile ).toString();
+    let data = fs.readFileSync(destFile).toString();
     config.replace = inject;
     data = utils.string.inject(data, config);
     grunt.log.writeln(`Injected: ${destFile}, Pre: ${config.prefix}, Post: ${config.postfix}`);
-    fs.writeFileSync(destFile , data);
+    fs.writeFileSync(destFile, data);
 
     done()
 

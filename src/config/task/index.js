@@ -17,7 +17,7 @@ const taskBuild = [
     'cory-replace',
     'cory:license',
 ];
-const tasBuildTs =  [
+const tasBuildTs = [
     'cory-ensure-protractor',
     'cory-npm',
     'clean',

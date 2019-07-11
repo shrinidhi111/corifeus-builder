@@ -24,7 +24,7 @@ const spawn = (options, spawnOptions) => {
         };
 
 //        grunt.log.writeln(JSON.stringify(spawnOptions, null, 4), typeof spawnOptions.cmd)
-        grunt.log.ok(`${spawnOptions.grunt ? 'grunt': path.basename(spawnOptions.cmd)} ${spawnOptions.args.join(' ')} done as:`)
+        grunt.log.ok(`${spawnOptions.grunt ? 'grunt' : path.basename(spawnOptions.cmd)} ${spawnOptions.args.join(' ')} done as:`)
         if (spawnOptions.grunt !== undefined || spawnOptions.cmd === 'grunt') {
             spawnOptions.args = spawnOptions.args || [];
             if (!Array.isArray(spawnOptions.args)) {
@@ -37,9 +37,7 @@ const spawn = (options, spawnOptions) => {
         }
 
 
-
         //       grunt.log.writeln(JSON.stringify(spawnOptions, null, 4))
-
 
 
         grunt.util.spawn(spawnOptions, function (error, result, code) {
@@ -75,9 +73,9 @@ const osIndependentPath = (path) => {
 }
 
 const injectorRelativePathGenerator = (options) => {
-    const { filePath } = options;
-    let { srcDir } = options;
-    srcDir = srcDir.replace(/^\/+/g,'').replace(/\/+$/g,'');
+    const {filePath} = options;
+    let {srcDir} = options;
+    srcDir = srcDir.replace(/^\/+/g, '').replace(/\/+$/g, '');
     const relative = osIndependentPath(path.relative(`${cwd}/${srcDir}/`, `${cwd}${filePath}`));
     return relative;
 }
@@ -86,7 +84,7 @@ const license = () => {
 
     const pkg = JSON.parse(fs.readFileSync(`${process.cwd()}/package.json`, 'utf8').toString());
 
-    const license =  `
+    const license = `
 @license ${pkg.name} v${pkg.version}
   
 ${pkg.description}
@@ -115,7 +113,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.    
 `;
-   return license
+    return license
 }
 
 module.exports.gruntMerge = gruntMerge

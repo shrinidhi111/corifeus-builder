@@ -27,7 +27,7 @@ module.exports = async (pkgFile) => {
 
     const size = 3;
     if (version.length < size) {
-        const extend = Array(size - version.length ).fill('0');
+        const extend = Array(size - version.length).fill('0');
         version = version.concat(extend);
     }
 
@@ -75,7 +75,7 @@ module.exports = async (pkgFile) => {
     pkg.name = `${prefix}${repo}${postfix}`;
 
     // pkg.engines = { "node" : `>=${process.versions.node}` };
-    pkg.engines = { "node" : `>=10.13.0` };
+    pkg.engines = {"node": `>=10.16.0`};
 
     pkg.homepage = `https://pages.corifeus.com/${repo}`;
 

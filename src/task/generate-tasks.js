@@ -14,7 +14,7 @@ module.exports = (grunt) => {
                 tasks.push(`${item}:${sub}`);
             })
         })
-        for(let taskName in grunt.task._tasks) {
+        for (let taskName in grunt.task._tasks) {
             const task = grunt.task._tasks[taskName];
             if (taskName.startsWith('cory')) {
                 tasks.push(`${taskName}`);
@@ -31,7 +31,7 @@ ${tasks.sort().join(`
 `)}
 \`\`\`
 `;
-        fs.writeFileSync(`artifacts/readme/builds/tasks.md`,template);
+        fs.writeFileSync(`artifacts/readme/builds/tasks.md`, template);
 
     })
 }
