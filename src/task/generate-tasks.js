@@ -26,7 +26,7 @@ module.exports = (grunt) => {
         
 Skeleton tasks
         
-\`\`\`javscript        
+\`\`\`js        
 ${tasks.sort().join(`
 `)}
 \`\`\`
