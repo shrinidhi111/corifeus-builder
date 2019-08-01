@@ -10,8 +10,7 @@ class loader {
 
         this.configJit = {
 //            jshint: 'grunt-contrib-jshint',
-            mochaTest: 'grunt-mocha-test',
-            mocha_istanbul: 'grunt-mocha-istanbul',
+
             clean: 'grunt-contrib-clean',
             watch: 'grunt-contrib-watch',
 //            jsdoc: 'grunt-contrib-jsdoc',
@@ -33,7 +32,7 @@ class loader {
         const config = options.config;
 
         if (options.empty) {
-            delete options.config['mocha_istanbul'];
+
             options.replacer = {
                 type: 'p3x',
             }
@@ -68,12 +67,6 @@ class loader {
 
         grunt.registerTask('cory-test', (target) => {
             switch (target) {
-                case 'js-mocha':
-                    grunt.task.run([
-                        'mochaTest',
-                        'watch:cory-js-test'
-                    ])
-                    break;
 
                 case 'angular-protractor':
                     grunt.task.run([

@@ -45,22 +45,7 @@ module.exports = () => {
 
     const result = _.merge(config, jsConfig());
 
-    result.mocha_istanbul['cory-coverage-ts'] = {
-        src: [
-            folder.build.node.root,
-            folder.test.mocha.root
-        ], // the folder, not the files
-        options: {
-            mask: '**/*.js',
-            coverageFolder: folder.build.coverageNode.root,
-            reportFormats: [
-                'clover',
-                'html',
-                'text'
-            ]
-        }
-    };
-    throw new Error('Please fix TypeScript module here above (mocha_istanbul settings changed, check js settings, simple)');
+
 
 //    return result;
 }

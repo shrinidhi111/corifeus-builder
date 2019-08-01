@@ -10,7 +10,7 @@
   
 [![NPM](https://nodei.co/npm/corifeus-builder.png?downloads=true&downloadRank=true)](https://www.npmjs.com/package/corifeus-builder/)
 ---
-# 🏗️ Corifeus Builder v2019.10.131  
+# 🏗️ Corifeus Builder v2019.10.213  
 
   
 **Note about versioning:** Versions are cut in Major.Minor.Patch schema. Major is always the current year. Minor is either 4 (January - June) or 10 (July - December). Patch is incremental by every build. If there is a breaking change, it should be noted in the readme.
@@ -84,88 +84,11 @@ Running "generate-folder" task
 
 Running "cory-generate-tasks" task
 
-Running "cory-ensure-protractor" task
-Protractor is not on the path
 Running "cory-npm" task
 
 Running "clean:cory-build" (clean) task
 >> 1 path cleaned.
 
-Running "mocha_istanbul:cory-coverage" (mocha_istanbul) task
-
-
-  async/await
-    ✓ main (752ms)
-
-  src/git
-commit: 35
-branch: master
-date: 1495185080
-repo: corifeus-builder
-    ✓ branch / data / commit / repo
-
-  src/task/json2scss
-    ✓ default
-
-  src/task/npm/exec
-new name: corifeus-builder
-old name: corifeus-builder
-new version: 1.7.572-36
-old version: 1.7.571-36
-    ✓ default
-
-  src/task/replace
-    ✓ default
-
-
-  5 passing (832ms)
-
------------------------|----------|----------|----------|----------|----------------|
-File                   |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
------------------------|----------|----------|----------|----------|----------------|
-All files              |    52.87 |    28.26 |    31.48 |    52.48 |                |
- src                   |    29.11 |     2.78 |    33.33 |    26.67 |                |
-  git.js               |      100 |       50 |      100 |      100 |             10 |
-  index.js             |      100 |      100 |      100 |      100 |                |
-  loader.js            |      8.2 |        0 |        0 |     8.33 |... 221,225,226 |
- src/config            |    71.43 |      100 |        0 |    71.43 |                |
-  index.js             |    71.43 |      100 |        0 |    71.43 |            5,6 |
- src/config/folder     |      100 |      100 |      100 |      100 |                |
-  index.js             |      100 |      100 |      100 |      100 |                |
- src/config/grunt      |      100 |      100 |      100 |      100 |                |
-  index.js             |      100 |      100 |      100 |      100 |                |
- src/config/grunt/js   |       60 |      100 |        0 |       60 |                |
-  index.js             |       60 |      100 |        0 |       60 |          6,101 |
- src/config/grunt/ts   |    46.15 |      100 |        0 |    46.15 |                |
-  index.js             |    46.15 |      100 |        0 |    46.15 |... 24,46,48,63 |
- src/config/task       |    88.46 |       50 |      100 |    88.46 |                |
-  index.js             |    88.46 |       50 |      100 |    88.46 |       46,47,50 |
- src/task              |    18.42 |        0 |        0 |    18.42 |                |
-  ensure-protractor.js |    16.67 |        0 |        0 |    16.67 |... 26,28,30,31 |
-  generate-tasks.js    |     12.5 |        0 |        0 |     12.5 |... 19,20,24,34 |
-  index.js             |      100 |      100 |      100 |      100 |                |
-  noop.js              |    33.33 |      100 |        0 |    33.33 |            2,3 |
- src/task/inject       |    22.73 |        0 |        0 |    22.73 |                |
-  index.js             |       25 |        0 |        0 |       25 |   4,5,6,7,9,10 |
-  inject.js            |    22.22 |        0 |        0 |    22.22 |... 47,48,49,51 |
- src/task/json2scss    |    80.49 |       75 |     62.5 |    80.49 |                |
-  index.js             |       25 |        0 |        0 |       25 |  4,6,7,8,10,11 |
-  json2scss.js         |    93.94 |    85.71 |      100 |    93.94 |          16,32 |
- src/task/npm          |    73.68 |       60 |       50 |    72.97 |                |
-  index.js             |       25 |      100 |        0 |       25 |   4,5,6,7,8,10 |
-  npm.js               |    86.67 |       60 |      100 |    86.21 |    20,21,33,41 |
- src/task/replace      |    71.05 |     62.5 |       40 |    71.05 |                |
-  index.js             |       25 |        0 |        0 |       25 |  5,7,8,9,11,12 |
-  replace.js           |    83.33 |    83.33 |    57.14 |    83.33 | 65,67,69,70,74 |
------------------------|----------|----------|----------|----------|----------------|
-
-=============================== Coverage summary ===============================
-Statements   : 52.87% ( 184/348 )
-Branches     : 28.26% ( 26/92 )
-Functions    : 31.48% ( 17/54 )
-Lines        : 52.48% ( 180/343 )
-================================================================================
->> Done. Check coverage folder.
 
 Running "cory-replace" task
 Replaced: artifacts/readme/builds/folders.md, Pre:  #@corifeus-header, Post:  #@corifeus-header:end
@@ -204,7 +127,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
   
 ---
   
-[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v2019.10.131 
+[**CORIFEUS-BUILDER**](https://pages.corifeus.com/corifeus-builder) Build v2019.10.213 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 

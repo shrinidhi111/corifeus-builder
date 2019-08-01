@@ -17,45 +17,8 @@ module.exports = (grunt) => {
             }
         },
         */
-        mochaTest: {
-            'cory-test-js': {
-                src: folder.files.mocha
-            },
-        },
-        mocha_istanbul: {
-            'cory-coverage': {
-                src: [
-//                    `${process.cwd()}/${folder.bin.root}` ,
-                    `${process.cwd()}/${folder.src.root}`,
-                    `${process.cwd()}/${folder.test.mocha.root}`,
-                ], // the folder, not the files
-                options: {
-                    mochaOptions: [],
-                    mask: '**/*.js',
-                    excludes: [
-                        `${process.cwd()}/${folder.src.root}**/*.css`,
-                        `${process.cwd()}/${folder.src.root}**/*.scss`,
-                    ],
-                    includes: [
-//                        `${process.cwd()}/${folder.bin.root}**` ,
-                        `${process.cwd()}/${folder.src.root}**`,
-                        `${process.cwd()}/${folder.test.mocha.root}**`,
-                    ],
-                    /*
-                    to add more local files, outside directories
-                     mochaOptions: [
-                         'cli.js'
-                     ],
-                     */
-                    coverageFolder: folder.build.coverage.root,
-                    reportFormats: [
-                        'clover',
-                        'html',
-                        'text'
-                    ]
-                }
-            }
-        },
+
+
         clean: {
             'cory-build': [
                 folder.build.root
