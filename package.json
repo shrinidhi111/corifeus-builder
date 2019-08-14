@@ -1,6 +1,6 @@
 {
     "name": "corifeus-builder",
-    "version": "2019.10.228",
+    "version": "2019.10.236",
     "corifeus": {
         "icon": "fas fa-gavel",
         "code": "Make",
@@ -36,7 +36,7 @@
     },
     "homepage": "https://pages.corifeus.com/corifeus-builder",
     "dependencies": {
-        "corifeus-utils": "^2019.10.144",
+        "corifeus-utils": "^2019.10.153",
         "fs-extra": "^8.1.0",
         "grunt": "^1.0.4",
         "grunt-contrib-clean": "^2.0.0",
@@ -47,7 +47,7 @@
         "mocha": "^6.2.0",
         "mz": "^2.7.0",
         "npm": "^6.10.3",
-        "npm-check-updates": "^3.1.20",
+        "npm-check-updates": "^3.1.21",
         "should": "^13.2.3",
         "time-grunt": "^2.0.0"
     },
