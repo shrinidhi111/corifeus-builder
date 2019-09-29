@@ -1,6 +1,6 @@
 {
     "name": "corifeus-builder",
-    "version": "2019.10.244",
+    "version": "2019.10.247",
     "corifeus": {
         "icon": "fas fa-gavel",
         "code": "Make",
@@ -36,7 +36,7 @@
     },
     "homepage": "https://pages.corifeus.com/corifeus-builder",
     "dependencies": {
-        "corifeus-utils": "^2019.10.161",
+        "corifeus-utils": "^2019.10.164",
         "fs-extra": "^8.1.0",
         "grunt": "^1.0.4",
         "grunt-contrib-clean": "^2.0.0",
