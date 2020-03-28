@@ -1,6 +1,6 @@
 {
     "name": "corifeus-builder",
-    "version": "2020.4.154",
+    "version": "2020.4.156",
     "corifeus": {
         "icon": "fas fa-gavel",
         "code": "Make",
