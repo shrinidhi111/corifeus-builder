@@ -8,6 +8,10 @@ const escapeStringRegexp = require('escape-string-regexp');
 
 module.exports = async function (context) {
 
+    if (context.artifactPaths[0].toLowerCase().includes('arm')) {
+        return
+    }
+
     if (!context.artifactPaths[0].toLowerCase().endsWith('appimage')) {
         return;
     }
@@ -43,6 +47,8 @@ module.exports = async function (context) {
 
             if (downloaded === false) {
 
+                // https://github.com/AppImage/AppImageKit/releases/download/12/appimagetool-armhf.AppImage - armv7l
+                // https://github.com/AppImage/AppImageKit/releases/download/12/appimagetool-aarch64.AppImage - arm64
                 await exec(
                     "curl",
                     [
@@ -150,7 +156,7 @@ https://github.com/patrikx3/${pkg.corifeus.reponame}/blob/master/changelog.md#v$
 
     console.log(`
 
-AppImage-s are upgrdaded with the --no-sandbox flag.        
+AppImage-s are upgrdaded with the --no-sandbox flag.
 
 `)
 
