@@ -106,7 +106,6 @@ module.exports = async function (context) {
         `-delete`
     ])
 
-    }
     await exec('rm', ['-rf', packageDir])
 
     chdir(originalDir)
