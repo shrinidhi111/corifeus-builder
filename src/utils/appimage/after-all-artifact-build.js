@@ -106,49 +106,6 @@ module.exports = async function (context) {
         `-delete`
     ])
 
-    const githubToken = fs.readFileSync(`${originalDir}/secure/token.txt`)
-    const GitHub = require('github-api');
-    var gh = new GitHub({
-        username: 'p3x-robot',
-        token: githubToken
-        /* also acceptable:
-           token: 'MY_OAUTH_TOKEN'
-         */
-    });
-    const pkg = require(`${originalDir}/package.json`)
-    const repo = await gh.getRepo('patrikx3', pkg.corifeus.reponame)
-    const result = await repo.createRelease({
-        "tag_name": 'v' + pkg.version,
-        "target_commitish": "master",
-        "name": pkg.version,
-        "body": `
-https://github.com/patrikx3/${pkg.corifeus.reponame}/blob/master/changelog.md#v${pkg.version.replace(/\./g, '')}
-
-[![Snapcraft](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/${pkg.name}#cory-non-external)
-`,
-        "draft": true,
-        "prerelease": false
-    })
-
-    const upload_url = result.data.upload_url.replace('{?name,label}', '')
-///    console.log('results', result)
-
-    for (let uploadAsset of assetsUploads) {
-        const args = [
-            `--request POST`,
-            `--data-binary @${dirname + '/' + uploadAsset}`,
-            `-H "Authorization: token ${githubToken}"`,
-            `-H "Content-Type: application/octet-stream"`,
-            `${upload_url}?name=${uploadAsset}`,
-            //``,
-        ]
-        if (uploadAsset.endsWith('yml')) {
-            await exec('cat', [
-                dirname + '/' + uploadAsset
-            ])
-        }
-        console.info('curl args', args)
-        await exec('curl', args)
     }
     await exec('rm', ['-rf', packageDir])
 
