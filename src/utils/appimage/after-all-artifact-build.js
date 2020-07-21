@@ -32,7 +32,8 @@ module.exports = async function (context) {
 
     const packageDir = 'squashfs-root'
 
-
+    process.env.ARCH = 'x86_64';
+    
     let downloaded = false
     const appimagetool = 'appimagetool';
 
